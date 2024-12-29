@@ -56,7 +56,7 @@ def register():
 # Wysyłanie wiadomości
 @app.route('/send', methods=['POST'])
 def send_message():
-    data = request.form
+    data = request.json
     login = data.get('login')
     password = data.get('password')
     recipient = data.get('recipient')
