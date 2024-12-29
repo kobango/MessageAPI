@@ -1,7 +1,7 @@
 import requests
 
 # URL API
-url = "https://Kociebor.pythonanywhere.com/history"
+url = "https://Kociebor.pythonanywhere.com/MessageAPI/history"
 
 # Dane do wysłania
 data = {

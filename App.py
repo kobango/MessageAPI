@@ -36,7 +36,7 @@ class Message(Base):
 Base.metadata.create_all(engine)
 
 # Rejestracja użytkownika (do testów)
-@app.route('/register', methods=['POST'])
+@app.route('/MessageAPI/register', methods=['POST'])
 def register():
     data = request.json
     username = data.get('username')
@@ -54,7 +54,7 @@ def register():
     return jsonify({"message": "User registered successfully"}), 201
 
 # Wysyłanie wiadomości
-@app.route('/send', methods=['POST'])
+@app.route('/MessageAPI/send', methods=['POST'])
 def send_message():
     data = request.json
     login = data.get('login')
@@ -81,7 +81,7 @@ def send_message():
     return jsonify({"message": "Message sent successfully"}), 201
 
 # Pobieranie nieprzeczytanych wiadomości
-@app.route('/unread', methods=['POST'])
+@app.route('/MessageAPI/unread', methods=['POST'])
 def get_unread_messages():
     data = request.json
     login = data.get('login')
@@ -104,7 +104,7 @@ def get_unread_messages():
     return jsonify(unread_messages), 200
 
 # Pobieranie historii wiadomości
-@app.route('/history', methods=['POST'])
+@app.route('/MessageAPI/history', methods=['POST'])
 def get_message_history():
     data = request.json
     login = data.get('login')
